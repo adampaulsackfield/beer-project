@@ -1,0 +1,17 @@
+@use '../../assets/sass/variables' as *;
+
+.navbar {
+	height: 100vh;
+	width: 20vw;
+	border: solid 2px red;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&__header {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+}

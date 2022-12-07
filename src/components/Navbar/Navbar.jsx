@@ -10,12 +10,14 @@ const Navbar = () => {
 	const date = new Date();
 
 	return (
-		<aside className={`navbar ${isOpen ? 'open' : ''}`}>
+		<aside className={`navbar ${isOpen ? 'navbar--open' : ''}`}>
 			<Header isOpen={isOpen} setIsOpen={setIsOpen} />
 
 			<Form isOpen={isOpen} />
 
-			<p>&copy; Cerveza {date.getFullYear()}</p>
+			<footer className='navbar__footer'>
+				Cerveza {date.getFullYear()}&copy;
+			</footer>
 		</aside>
 	);
 };

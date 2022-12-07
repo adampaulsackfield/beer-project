@@ -5,15 +5,18 @@ import './Header.scss';
 const Header = ({ isOpen, setIsOpen }) => {
 	return (
 		<header className='header'>
-			<h1 className={`header__logo ${isOpen ? 'show' : ''}`}>Cerveza</h1>
+			<h1 className={`header__logo ${isOpen ? 'header__logo--show' : ''}`}>
+				Cerveza
+			</h1>
 
-			<Hamburger
-				className='header__menu'
-				toggled={isOpen}
-				toggle={setIsOpen}
-				onToggle={''}
-				color='#4FD1C5'
-			/>
+			<div className='header__menu'>
+				<Hamburger
+					toggled={isOpen}
+					toggle={setIsOpen}
+					onToggle={''}
+					color='#dd1cad'
+				/>
+			</div>
 		</header>
 	);
 };

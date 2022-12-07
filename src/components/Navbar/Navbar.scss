@@ -3,19 +3,27 @@
 .navbar {
 	height: 100vh;
 	width: 50px;
-	background-color: #494949;
+	background-color: $color-sidebar;
 
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
+	padding-left: 4px;
 	transition: width ease-in-out 300ms;
-}
+	padding: 6px 0;
 
-.open {
-	width: 200px;
-}
+	&--open {
+		width: 200px;
+	}
 
-.show {
-	display: inline;
+	&--show {
+		display: inline;
+	}
+
+	&__footer {
+		font-size: 0.8rem;
+		text-align: center;
+		color: $color-accent;
+	}
 }

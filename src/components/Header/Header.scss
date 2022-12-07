@@ -2,15 +2,26 @@
 
 .header {
 	width: 100%;
+	position: relative;
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	padding-top: 0.1rem;
+
+	color: $color-white;
 
 	&__logo {
 		display: none;
-	}
-}
+		font-weight: bold;
+		font-size: 2rem;
+		letter-spacing: 2px;
 
-.show {
-	display: inline;
+		&--show {
+			display: inherit;
+		}
+	}
+
+	&__menu {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
 }

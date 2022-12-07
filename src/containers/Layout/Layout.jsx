@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import Navbar from '../../components/Navbar/Navbar';
+import BeersContainer from '../BeersContainer/BeersContainer';
 
 import './Layout.scss';
 
@@ -17,6 +18,8 @@ const Layout = () => {
 	return (
 		<section className='layout'>
 			<Navbar formData={formData} setFormData={setFormData} />
+
+			<BeersContainer />
 		</section>
 	);
 };

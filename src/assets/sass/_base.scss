@@ -4,9 +4,15 @@ body {
 	display: flex;
 	color: white;
 	font-family: $font-serif;
+	transform: translateX(-250px);
+	transition: transform ease-in-out 400ms;
 }
 
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
+}
+
+.open {
+	transform: translateX(0);
 }

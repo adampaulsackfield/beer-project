@@ -12,7 +12,7 @@ const Navbar = ({ formData, setFormData }) => {
 	const date = new Date();
 
 	return (
-		<aside className={`sidebar ${isOpen && 'sidebar--open'}`}>
+		<aside className='sidebar'>
 			<section className='sidebar__main'>
 				<Header />
 
@@ -25,7 +25,7 @@ const Navbar = ({ formData, setFormData }) => {
 				<Hamburger
 					toggled={isOpen}
 					toggle={setIsOpen}
-					onToggle={''}
+					onToggle={() => document.body.classList.toggle('open')}
 					color='#dd1cad'
 				/>
 			</section>

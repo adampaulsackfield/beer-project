@@ -4,12 +4,6 @@
 	height: 100vh;
 	width: 300px;
 	display: flex;
-	transform: translateX(-250px);
-	transition: transform ease-in-out 400ms;
-
-	&--open {
-		transform: translateX(0);
-	}
 
 	&__main {
 		width: 250px;
@@ -23,6 +17,7 @@
 	}
 
 	&__small {
+		width: 50px;
 		display: flex;
 		background-color: $color-background;
 		border-left: solid 1px $color-accent;

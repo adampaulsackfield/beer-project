@@ -1,5 +1,9 @@
+@use './variables' as *;
+
 body {
 	display: flex;
+	color: white;
+	font-family: $font-serif;
 }
 
 .container {

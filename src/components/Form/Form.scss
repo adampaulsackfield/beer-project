@@ -1,13 +1,44 @@
 @use '../../assets/sass/variables' as *;
 
 .form {
+	height: 800px;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	background-color: red;
-}
+	justify-content: center;
+	gap: 1rem;
 
-.show {
-	display: inline;
+	transform: translateX(-100%);
+	transition: all ease-in 400ms;
+
+	&--show {
+		transform: translateX(0);
+	}
+
+	&__header {
+		font-size: 2rem;
+	}
+
+	&__input {
+		background: transparent;
+		border: none;
+		border-bottom: solid 1px $color-accent;
+		color: white;
+
+		&:focus {
+			outline: none;
+		}
+
+		&[type='text'] {
+			padding: 0.4rem 0.2rem;
+		}
+	}
+
+	&__label {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__checkbox {
+		accent-color: $color-accent;
+	}
 }

@@ -1,0 +1,16 @@
+@use '../../assets/sass/variables' as *;
+
+.header {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__logo {
+		display: none;
+	}
+}
+
+.show {
+	display: inline;
+}

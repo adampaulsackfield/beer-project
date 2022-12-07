@@ -1,27 +1,15 @@
 @use '../../assets/sass/variables' as *;
 
 .header {
-	width: 100%;
-	position: relative;
-	display: flex;
-	padding-top: 0.1rem;
-
-	color: $color-white;
+	// align-self: flex-start;
 
 	&__logo {
-		display: none;
-		font-weight: bold;
+		font-weight: light;
 		font-size: 2rem;
 		letter-spacing: 2px;
 
 		&--show {
 			display: inherit;
 		}
-	}
-
-	&__menu {
-		position: absolute;
-		top: 0;
-		right: 0;
 	}
 }

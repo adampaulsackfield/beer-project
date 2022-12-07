@@ -1,16 +1,26 @@
 import './Form.scss';
 
-const Form = ({ isOpen }) => {
+const Form = ({ formData, setFormData }) => {
+	const handleInput = (e) => {
+		setFormData({ ...formData, searchTerm: e.target.value });
+	};
+
+	const handleChange = (e) => {
+		setFormData({ ...formData, [e.target.name]: !formData[e.target.name] });
+	};
+
 	return (
-		<form className={`form ${isOpen ? 'form--show' : ''}`} onSubmit={''}>
+		<form className='form' onSubmit={''}>
 			<h2 className='form__header'>Filter</h2>
 
 			<input
 				className='form__input'
 				type='text'
-				name='search'
+				name='searchTerm'
 				id='search'
 				placeholder='Search term...'
+				value={formData.searchTerm}
+				onChange={handleInput}
 			/>
 
 			<label className='form__label' htmlFor='highAbv'>
@@ -20,6 +30,8 @@ const Form = ({ isOpen }) => {
 					type='checkbox'
 					name='highAbv'
 					id='highAbv'
+					value={formData.highAbv}
+					onChange={handleChange}
 				/>
 			</label>
 
@@ -30,6 +42,8 @@ const Form = ({ isOpen }) => {
 					type='checkbox'
 					name='classic'
 					id='classic'
+					value={formData.classic}
+					onChange={handleChange}
 				/>
 			</label>
 
@@ -40,6 +54,8 @@ const Form = ({ isOpen }) => {
 					type='checkbox'
 					name='acidic'
 					id='acidic'
+					value={formData.acidic}
+					onChange={handleChange}
 				/>
 			</label>
 		</form>

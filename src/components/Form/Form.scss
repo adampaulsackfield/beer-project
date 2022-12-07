@@ -1,21 +1,13 @@
 @use '../../assets/sass/variables' as *;
 
 .form {
-	height: 800px;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	gap: 1rem;
 
-	transform: translateX(-100%);
-	transition: all ease-in 400ms;
-
-	&--show {
-		transform: translateX(0);
-	}
-
 	&__header {
-		font-size: 2rem;
+		font-size: 1.4rem;
+		font-family: $font-sans;
 	}
 
 	&__input {
@@ -36,6 +28,10 @@
 	&__label {
 		display: flex;
 		justify-content: space-between;
+
+		font-size: 0.75rem;
+		font-family: $font-sans;
+		letter-spacing: 1px;
 	}
 
 	&__checkbox {

@@ -1,23 +1,34 @@
 import { useState } from 'react';
-import Form from '../Form/Form';
+import { Divide as Hamburger } from 'hamburger-react';
+
 import Header from '../Header/Header';
+import Form from '../Form/Form';
 
 import './Navbar.scss';
 
-const Navbar = () => {
+const Navbar = ({ formData, setFormData }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const date = new Date();
 
 	return (
-		<aside className={`navbar ${isOpen ? 'navbar--open' : ''}`}>
-			<Header isOpen={isOpen} setIsOpen={setIsOpen} />
+		<aside className={`sidebar ${isOpen && 'sidebar--open'}`}>
+			<section className='sidebar__main'>
+				<Header />
 
-			<Form isOpen={isOpen} />
+				<Form formData={formData} setFormData={setFormData} />
 
-			<footer className='navbar__footer'>
-				Cerveza {date.getFullYear()}&copy;
-			</footer>
+				<footer>Cerveza {date.getFullYear()}&copy;</footer>
+			</section>
+
+			<section className='sidebar__small'>
+				<Hamburger
+					toggled={isOpen}
+					toggle={setIsOpen}
+					onToggle={''}
+					color='#dd1cad'
+				/>
+			</section>
 		</aside>
 	);
 };

@@ -2,12 +2,28 @@
 
 .form {
 	display: flex;
+	height: 800px;
 	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	background-color: red;
-}
+	justify-content: center;
+	gap: 1rem;
+	transform: translateX(-100%);
+	transition: all ease-in 400ms;
 
-.show {
-	display: inline;
+	&--show {
+		transform: translateX(0);
+	}
+
+	&__header {
+		color: white;
+	}
+
+	&__label {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__checkbox {
+		margin-left: 1rem;
+	}
 }

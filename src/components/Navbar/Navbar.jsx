@@ -40,7 +40,7 @@ const Navbar = ({
 					className='sidebar__small--logo'
 					style={{ writingMode: 'vertical-lr', textOrientation: 'upright' }}
 				>
-					Tienda de Cerve
+					Tienda de Cerveza
 				</p>
 
 				<div className='sidebar__small--cart-icon' onClick={handleClick}>

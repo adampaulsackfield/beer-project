@@ -26,3 +26,11 @@
 		border-left: solid 1px $color-accent;
 	}
 }
+
+@media screen and (min-width: 1200px) {
+	.sidebar {
+		&__small {
+			display: none;
+		}
+	}
+}

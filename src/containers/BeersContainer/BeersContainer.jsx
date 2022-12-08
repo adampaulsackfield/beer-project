@@ -17,7 +17,7 @@ const BeersContainer = ({ formData }) => {
 
 	return (
 		<section className='beers'>
-			<p className='beers__header'>See our selection of quality beers</p>
+			{/* <p className='beers__header'>See our selection of quality beers</p> */}
 
 			{filtered &&
 				filtered.map((beer) => {

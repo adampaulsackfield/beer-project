@@ -6,11 +6,11 @@ const Beer = ({ beer }) => {
 			<img className='beer__img' src={beer.image_url} alt={beer.name} />
 
 			<ul className='beer__info'>
-				<li className='beer__info--item'>{beer.abv}%</li>
+				<li className='beer__info--item'>ABV: {beer.abv}%</li>
 				<li className='beer__info--item'>
 					{beer.volume.value} {beer.volume.unit}
 				</li>
-				<li className='beer__info--item'>Est: {beer.first_brewed}</li>
+				<li className='beer__info--item'>Est. {beer.first_brewed}</li>
 			</ul>
 
 			<p className='beer__header'>

@@ -1,8 +1,8 @@
 .beers {
-	width: 100vw; // TODO - not ideal
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 1rem;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
 
 	color: black;
 	padding: 0 1rem;
@@ -10,6 +10,7 @@
 
 @media screen and (min-width: 800px) {
 	.beers {
-		grid-template-columns: repeat(3, 1fr);
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
 }

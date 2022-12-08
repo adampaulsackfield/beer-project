@@ -1,19 +1,23 @@
-import data from '../../assets/data';
+import { useState } from 'react';
+import { getBeers } from '../../API/API';
+
 import Beer from '../../components/Beer/Beer';
 
 import './BeersContainer.scss';
 
 const BeersContainer = ({ formData }) => {
-	// const filtered = data.filter(({ role, name }) => {
-	// 	return (
-	// 		role.includes('selectedRole') &&
-	// 		name.toLowerCase().includes(params.searchTerm)
-	// 	);
-	// });
+	const [beers, setBeers] = useState([]);
 
-	const filtered = data.filter((beer) => {
+	const filtered = beers.filter((beer) => {
 		return beer.name.toLowerCase().includes(formData.searchTerm);
 	});
+
+	const getData = async () => {
+		const res = await getBeers(formData);
+		setBeers(res);
+	};
+
+	getData();
 
 	return (
 		<section className='beers'>
@@ -21,7 +25,6 @@ const BeersContainer = ({ formData }) => {
 
 			{filtered &&
 				filtered.map((beer) => {
-					console.log(beer);
 					return <Beer beer={beer} />;
 				})}
 		</section>

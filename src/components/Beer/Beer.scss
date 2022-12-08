@@ -11,19 +11,23 @@
 	border-radius: 20px;
 
 	&__img {
-		// width: 100%;
 		max-height: 200px;
 		align-self: center;
 	}
 
 	&__info {
+		height: 2rem;
 		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		font-size: 0.75rem;
 		list-style: none;
 		background: $color-accent;
 		border-radius: 20px;
 
 		&--item {
-			padding: 1rem;
+			text-align: center;
+			padding: 0 1rem;
 
 			&:nth-child(2) {
 				border-left: solid 1px black;
@@ -33,10 +37,10 @@
 	}
 
 	&__header {
-		font-size: 2rem;
+		font-size: 1.4rem;
 
 		&--quantity {
-			font-size: 1.2rem;
+			font-size: 0.75rem;
 		}
 	}
 

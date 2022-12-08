@@ -25,7 +25,7 @@ const Navbar = ({ formData, setFormData }) => {
 				<Hamburger
 					toggled={isOpen}
 					toggle={setIsOpen}
-					onToggle={() => document.body.classList.toggle('open')}
+					onToggle={() => document.body.classList.toggle('body--open')}
 					color='#dd1cad'
 				/>
 			</section>

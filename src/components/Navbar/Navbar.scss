@@ -36,6 +36,12 @@
 			align-items: flex-start;
 		}
 
+		&--logo {
+			// writing-mode: 'horizontal-lr' !important; //TODO Don't work so had to apply as inline styles
+			// text-orientation: 'upright' !important;
+			color: $color-accent;
+		}
+
 		&--cart-count {
 			position: absolute;
 			width: 15px;
@@ -53,7 +59,7 @@
 @media screen and (min-width: 1200px) {
 	.sidebar {
 		&__small {
-			display: none;
+			// display: none;
 		}
 	}
 }

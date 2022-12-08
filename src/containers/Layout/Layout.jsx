@@ -16,10 +16,17 @@ const initialState = {
 const Layout = () => {
 	const [formData, setFormData] = useState(initialState);
 	const [basket, setBasket] = useState([]);
+	const [showBasket, setShowBasket] = useState(false);
 
 	return (
 		<section className='layout'>
-			<Navbar formData={formData} setFormData={setFormData} basket={basket} />
+			<Navbar
+				formData={formData}
+				setFormData={setFormData}
+				basket={basket}
+				showBasket={showBasket}
+				toggleBasket={setShowBasket}
+			/>
 
 			<BeersContainer
 				formData={formData}
@@ -27,7 +34,12 @@ const Layout = () => {
 				setBasket={setBasket}
 			/>
 
-			<Basket basket={basket} setBasket={setBasket} />
+			<Basket
+				basket={basket}
+				setBasket={setBasket}
+				showBasket={showBasket}
+				toggleBasket={setShowBasket}
+			/>
 		</section>
 	);
 };

@@ -14,7 +14,7 @@ const Form = ({ formData, setFormData }) => {
 	};
 
 	return (
-		<form className='form' onSubmit={''}>
+		<form className='form'>
 			<h2 className='form__header'>Filter</h2>
 
 			<input

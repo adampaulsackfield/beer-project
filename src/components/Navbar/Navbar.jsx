@@ -8,10 +8,18 @@ import Form from '../Form/Form';
 
 import './Navbar.scss';
 
-const Navbar = ({ formData, setFormData, basket }) => {
+const Navbar = ({
+	formData,
+	setFormData,
+	basket,
+	showBasket,
+	toggleBasket,
+}) => {
 	const [isOpen, setIsOpen] = useState(false);
 
-	const date = new Date();
+	const handleClick = () => {
+		toggleBasket(!showBasket);
+	};
 
 	return (
 		<aside className='sidebar'>
@@ -31,7 +39,14 @@ const Navbar = ({ formData, setFormData, basket }) => {
 					color='#c23838'
 				/>
 
-				<div className='sidebar__small--cart-icon'>
+				<p
+					className='sidebar__small--logo'
+					style={{ writingMode: 'vertical-lr', textOrientation: 'upright' }}
+				>
+					Tienda de Cerve
+				</p>
+
+				<div className='sidebar__small--cart-icon' onClick={handleClick}>
 					<FaShoppingBasket />
 					{basket.length > 0 && (
 						<span className='sidebar__small--cart-count'>{basket.length}</span>

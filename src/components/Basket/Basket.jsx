@@ -1,19 +1,26 @@
 import { FaRegTrashAlt } from 'react-icons/fa';
+import { ImCross } from 'react-icons/im';
 
 import './Basket.scss';
 
-const Basket = ({ basket, setBasket }) => {
+const Basket = ({ basket, setBasket, showBasket, toggleBasket }) => {
 	const removeItem = (item) => {
 		const newBasket = basket.filter((beer) => beer.id !== item.id);
 
 		setBasket(newBasket);
 	};
 
-	return (
-		<section className='basket'>
-			<p className='basket__header'>Basket</p>
+	const handleClick = () => {
+		toggleBasket(!showBasket);
+	};
 
+	return (
+		<section className={`basket ${showBasket ? ' basket--show' : ''}`}>
 			<ul className='basket__items'>
+				<div className='basket__header'>
+					<p className='basket__header--text'>Basket</p>
+					<ImCross className='basket__header--cross' onClick={handleClick} />
+				</div>
 				{basket &&
 					basket.map((item) => {
 						return (

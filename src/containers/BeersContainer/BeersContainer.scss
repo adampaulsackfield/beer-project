@@ -1,4 +1,13 @@
-.div {
-	background-color: red;
-	width: 100%;
+.beers {
+	// width: 100%; // TODO - not ideal
+	// margin-left: 250px;
+	display: flex;
+	flex-direction: column;
+	// grid-template-columns: repeat(1, 1fr);
+	color: black;
+	padding: 0 1rem;
+	align-items: center;
+	justify-content: center;
+
+	gap: 1rem;
 }

@@ -19,7 +19,7 @@ const Layout = () => {
 		<section className='layout'>
 			<Navbar formData={formData} setFormData={setFormData} />
 
-			<BeersContainer />
+			<BeersContainer formData={formData} />
 		</section>
 	);
 };

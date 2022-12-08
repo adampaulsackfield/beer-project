@@ -2,7 +2,7 @@ import './Form.scss';
 
 const Form = ({ formData, setFormData }) => {
 	const handleInput = (e) => {
-		setFormData({ ...formData, searchTerm: e.target.value });
+		setFormData({ ...formData, searchTerm: e.target.value.toLowerCase() });
 	};
 
 	const handleChange = (e) => {

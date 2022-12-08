@@ -1,6 +1,9 @@
 @use '../../assets/sass/variables' as *;
 
 .sidebar {
+	position: sticky;
+	top: 0;
+	left: 0;
 	height: 100vh;
 	width: 300px;
 	display: flex;

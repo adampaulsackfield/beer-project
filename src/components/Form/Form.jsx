@@ -28,8 +28,10 @@ const Form = ({ formData, setFormData }) => {
 			/>
 
 			<label className='form__label' htmlFor='highAbv'>
-				High ABV &gt; 6%{' '}
-				<CiPercent style={{ fontSize: '1rem', color: 'red' }} />
+				<p className='form__label--text'>High ABV &gt; 6% </p>
+
+				<CiPercent className='form__label--icon' />
+
 				<input
 					className='form__checkbox'
 					type='checkbox'
@@ -41,7 +43,10 @@ const Form = ({ formData, setFormData }) => {
 			</label>
 
 			<label className='form__label' htmlFor='classic'>
-				Classic Range <GiTopHat />
+				<p className='form__label--text'>Classic Range</p>
+
+				<GiTopHat className='form__label--icon' />
+
 				<input
 					className='form__checkbox'
 					type='checkbox'
@@ -53,7 +58,10 @@ const Form = ({ formData, setFormData }) => {
 			</label>
 
 			<label className='form__label' htmlFor='acidic'>
-				Acidic ph &lt; 4 <GiAcid />
+				<p className='form__label--text'>Acidic ph &lt; 4</p>
+
+				<GiAcid className='form__label--icon' />
+
 				<input
 					className='form__checkbox'
 					type='checkbox'

@@ -1,11 +1,11 @@
 import './App.scss';
 
-import Layout from './containers/Layout/Layout';
+import LayoutContainer from './containers/LayoutContainer/LayoutContainer';
 
 function App() {
 	return (
 		<div className='container'>
-			<Layout />
+			<LayoutContainer />
 		</div>
 	);
 }

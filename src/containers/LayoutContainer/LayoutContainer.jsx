@@ -4,7 +4,7 @@ import Basket from '../../components/Basket/Basket';
 import Navbar from '../../components/Navbar/Navbar';
 import BeersContainer from '../BeersContainer/BeersContainer';
 
-import './Layout.scss';
+import './LayoutContainer.scss';
 
 const initialState = {
 	searchTerm: '',
@@ -13,7 +13,7 @@ const initialState = {
 	acidic: false,
 };
 
-const Layout = () => {
+const LayoutContainer = () => {
 	const [formData, setFormData] = useState(initialState);
 	const [basket, setBasket] = useState([]);
 	const [showBasket, setShowBasket] = useState(false);
@@ -44,4 +44,4 @@ const Layout = () => {
 	);
 };
 
-export default Layout;
+export default LayoutContainer;

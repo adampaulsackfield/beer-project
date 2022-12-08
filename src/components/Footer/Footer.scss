@@ -1,3 +1,5 @@
+@use '../../assets/sass/variables' as *;
+
 .footer {
 	text-align: center;
 
@@ -6,6 +8,7 @@
 	}
 
 	&__subheader {
-		font-size: 0.65rem;
+		font-size: 0.5rem;
+		color: $color-accent;
 	}
 }

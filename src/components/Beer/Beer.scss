@@ -25,14 +25,15 @@
 		list-style: none;
 		background: $color-accent;
 		border-radius: 20px;
+		color: #e1e1e1;
 
 		&--item {
 			text-align: center;
 			padding: 0 1rem;
 
 			&:nth-child(2) {
-				border-left: solid 1px black;
-				border-right: solid 1px black;
+				border-left: solid 1px #e1e1e1;
+				border-right: solid 1px #e1e1e1;
 			}
 		}
 	}
@@ -47,6 +48,7 @@
 
 	&__subheader {
 		font-size: 0.6rem;
+		color: $color-accent;
 	}
 
 	&__description {
@@ -56,12 +58,17 @@
 	&__button {
 		border: none;
 		background: transparent;
-		background-color: $color-accent;
-		padding: 1rem;
+		padding: 0.75rem;
 		border-radius: 20px;
 		color: white;
 		font-weight: bold;
 		font-size: 0.75rem;
+		background-color: $color-background;
+		transition: background-color ease-in 200ms;
+
+		&:hover {
+			background-color: $color-accent;
+		}
 	}
 }
 

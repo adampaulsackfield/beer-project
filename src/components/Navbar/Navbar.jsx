@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Divide as Hamburger } from 'hamburger-react';
 
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import Form from '../Form/Form';
 
 import './Navbar.scss';
@@ -18,7 +19,7 @@ const Navbar = ({ formData, setFormData }) => {
 
 				<Form formData={formData} setFormData={setFormData} />
 
-				<footer>Cerveza {date.getFullYear()}&copy;</footer>
+				<Footer />
 			</section>
 
 			<section className='sidebar__small'>
@@ -26,7 +27,7 @@ const Navbar = ({ formData, setFormData }) => {
 					toggled={isOpen}
 					toggle={setIsOpen}
 					onToggle={() => document.body.classList.toggle('body--open')}
-					color='#dd1cad'
+					color='#c23838'
 				/>
 			</section>
 		</aside>

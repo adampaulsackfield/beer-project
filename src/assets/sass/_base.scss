@@ -8,6 +8,8 @@
 	transform: translateX(-250px);
 	transition: transform ease-in-out 400ms;
 
+	overflow-x: hidden;
+
 	&--open {
 		transform: translateX(0);
 	}

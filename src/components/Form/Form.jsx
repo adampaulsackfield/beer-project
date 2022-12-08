@@ -1,3 +1,7 @@
+import { CiPercent } from 'react-icons/ci';
+
+import { GiTopHat, GiAcid } from 'react-icons/gi';
+
 import './Form.scss';
 
 const Form = ({ formData, setFormData }) => {
@@ -24,7 +28,8 @@ const Form = ({ formData, setFormData }) => {
 			/>
 
 			<label className='form__label' htmlFor='highAbv'>
-				High ABV &gt; 6%
+				High ABV &gt; 6%{' '}
+				<CiPercent style={{ fontSize: '1rem', color: 'red' }} />
 				<input
 					className='form__checkbox'
 					type='checkbox'
@@ -35,8 +40,8 @@ const Form = ({ formData, setFormData }) => {
 				/>
 			</label>
 
-			<label className='form__label' htmlFor='highAbv'>
-				Classic Range
+			<label className='form__label' htmlFor='classic'>
+				Classic Range <GiTopHat />
 				<input
 					className='form__checkbox'
 					type='checkbox'
@@ -47,8 +52,8 @@ const Form = ({ formData, setFormData }) => {
 				/>
 			</label>
 
-			<label className='form__label' htmlFor='highAbv'>
-				Acidic ph &lt; 4
+			<label className='form__label' htmlFor='acidic'>
+				Acidic ph &lt; 4 <GiAcid />
 				<input
 					className='form__checkbox'
 					type='checkbox'

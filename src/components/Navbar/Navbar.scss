@@ -16,14 +16,14 @@
 		align-items: center;
 
 		// background-color: $color-primary;
-		background: linear-gradient($color-primary, $color-background);
+		background: linear-gradient($color-primary, $color-sidebar);
 	}
 
 	&__small {
 		width: 50px;
 		display: flex;
 		background-color: $color-background;
-		border-left: solid 1px $color-accent;
+		border-left: solid 1px $color-accent-dark;
 	}
 }
 

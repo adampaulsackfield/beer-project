@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { getBeers } from '../../API/API';
 
 import Beer from '../../components/Beer/Beer';
+import data from '../../assets/data';
 
 import './BeersContainer.scss';
 

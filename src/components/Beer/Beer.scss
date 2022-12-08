@@ -60,5 +60,20 @@
 		border-radius: 20px;
 		color: white;
 		font-weight: bold;
+		font-size: 0.75rem;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	.beer {
+		width: 300px;
+
+		&__info {
+			font-size: 0.65rem;
+		}
+
+		&__header {
+			font-size: 1.2rem;
+		}
 	}
 }

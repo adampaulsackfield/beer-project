@@ -1,6 +1,10 @@
 import './Beer.scss';
 
-const Beer = ({ beer }) => {
+const Beer = ({ beer, basket, setBasket }) => {
+	const addToCart = () => {
+		setBasket([...basket, beer]);
+	};
+
 	return (
 		<article key={beer.id} className='beer'>
 			<img className='beer__img' src={beer.image_url} alt={beer.name} />
@@ -24,7 +28,9 @@ const Beer = ({ beer }) => {
 
 			<p className='beer__description'>{beer.description.slice(0, 100)}...</p>
 
-			<button className='beer__button'>ADD TO CART</button>
+			<button className='beer__button' onClick={addToCart}>
+				ADD TO CART
+			</button>
 		</article>
 	);
 };

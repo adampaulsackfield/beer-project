@@ -22,8 +22,31 @@
 	&__small {
 		width: 50px;
 		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
 		background-color: $color-background;
 		border-left: solid 1px $color-accent-dark;
+
+		&--cart-icon {
+			font-size: 2rem;
+			position: relative;
+			display: flex;
+			justify-content: flex-end;
+			align-items: flex-start;
+		}
+
+		&--cart-count {
+			position: absolute;
+			width: 15px;
+			height: 15px;
+			border-radius: 100%;
+			text-align: center;
+			font-size: 0.75rem;
+			font-weight: bold;
+
+			background-color: red;
+		}
 	}
 }
 

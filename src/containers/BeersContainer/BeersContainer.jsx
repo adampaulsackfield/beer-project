@@ -6,8 +6,8 @@ import data from '../../assets/data';
 
 import './BeersContainer.scss';
 
-const BeersContainer = ({ formData }) => {
-	const [beers, setBeers] = useState([]);
+const BeersContainer = ({ formData, basket, setBasket }) => {
+	const [beers, setBeers] = useState(data);
 
 	const filtered = beers.filter((beer) => {
 		return beer.name.toLowerCase().includes(formData.searchTerm);
@@ -18,7 +18,7 @@ const BeersContainer = ({ formData }) => {
 		setBeers(res);
 	};
 
-	getData();
+	// getData();
 
 	return (
 		<section className='beers'>
@@ -26,7 +26,7 @@ const BeersContainer = ({ formData }) => {
 
 			{filtered &&
 				filtered.map((beer) => {
-					return <Beer beer={beer} />;
+					return <Beer beer={beer} basket={basket} setBasket={setBasket} />;
 				})}
 		</section>
 	);

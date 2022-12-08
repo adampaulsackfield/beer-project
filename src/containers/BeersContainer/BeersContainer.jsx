@@ -2,12 +2,11 @@ import { useState } from 'react';
 import { getBeers } from '../../API/API';
 
 import Beer from '../../components/Beer/Beer';
-import data from '../../assets/data';
 
 import './BeersContainer.scss';
 
 const BeersContainer = ({ formData, basket, setBasket }) => {
-	const [beers, setBeers] = useState(data);
+	const [beers, setBeers] = useState([]);
 
 	const filtered = beers.filter((beer) => {
 		return beer.name.toLowerCase().includes(formData.searchTerm);
@@ -18,17 +17,19 @@ const BeersContainer = ({ formData, basket, setBasket }) => {
 		setBeers(res);
 	};
 
-	// getData();
+	getData();
 
 	return (
-		<section className='beers'>
-			{/* <p className='beers__header'>See our selection of quality beers</p> */}
+		<div>
+			<p className='beers__header'>See our selection of quality beers</p>
 
-			{filtered &&
-				filtered.map((beer) => {
-					return <Beer beer={beer} basket={basket} setBasket={setBasket} />;
-				})}
-		</section>
+			<section className='beers'>
+				{filtered &&
+					filtered.map((beer) => {
+						return <Beer beer={beer} basket={basket} setBasket={setBasket} />;
+					})}
+			</section>
+		</div>
 	);
 };
 

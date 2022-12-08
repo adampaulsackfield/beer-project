@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Divide as Hamburger } from 'hamburger-react';
 import { FaShoppingBasket } from 'react-icons/fa';
 
-import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Form from '../Form/Form';
 
@@ -24,8 +23,6 @@ const Navbar = ({
 	return (
 		<aside className='sidebar'>
 			<section className='sidebar__main'>
-				<Header />
-
 				<Form formData={formData} setFormData={setFormData} />
 
 				<Footer />

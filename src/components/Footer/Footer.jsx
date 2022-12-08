@@ -5,7 +5,9 @@ const Footer = () => {
 
 	return (
 		<footer className='footer'>
-			<p className='footer__header'>Cerveza {date.getFullYear()}&copy;</p>
+			<p className='footer__header'>
+				Tiend de Cerveza &copy; {date.getFullYear()}
+			</p>
 			<p className='footer__subheader'>Design Credit to Constanine Coica</p>
 		</footer>
 	);

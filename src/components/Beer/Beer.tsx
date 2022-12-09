@@ -1,8 +1,25 @@
+import React, { ReactElement } from 'react';
+
+// Interfaces
+import { BeerInterface } from '../../interfaces/BeerInterface';
+
+// Styles
 import './Beer.scss';
 
-const Beer = ({ beer, basket, setBasket }) => {
+// Props
+interface BeerProps {
+	beer: BeerInterface;
+	basket: BeerInterface[];
+	setBasket: React.Dispatch<React.SetStateAction<Array<BeerInterface>>>;
+}
+
+const Beer: React.FC<BeerProps> = ({
+	beer,
+	basket,
+	setBasket,
+}): ReactElement => {
 	// Simple function to add items to the cart. Does not join duplicates.
-	const addToCart = () => {
+	const addToCart = (): void => {
 		setBasket([...basket, beer]);
 	};
 

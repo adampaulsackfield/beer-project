@@ -1,19 +1,38 @@
-import { useState } from 'react';
+import React, { ReactElement, useState } from 'react';
+
+// Hamburger Menu
 import { Divide as Hamburger } from 'hamburger-react';
+
+// React Icons
 import { FaShoppingBasket } from 'react-icons/fa';
 
+// Components
 import Footer from '../Footer/Footer';
 import Form from '../Form/Form';
 
+// Interfaces
+import { BeerInterface } from '../../interfaces/BeerInterface';
+import { FormInterface } from '../../interfaces/FormInterface';
+
+// Styles
 import './Navbar.scss';
 
-const Navbar = ({
+// Props
+interface NavbarProps {
+	formData: FormInterface;
+	setFormData: React.Dispatch<React.SetStateAction<FormInterface>>;
+	basket: BeerInterface[];
+	showBasket: boolean;
+	toggleBasket: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Navbar: React.FC<NavbarProps> = ({
 	formData,
 	setFormData,
 	basket,
 	showBasket,
 	toggleBasket,
-}) => {
+}): ReactElement => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const handleClick = () => {

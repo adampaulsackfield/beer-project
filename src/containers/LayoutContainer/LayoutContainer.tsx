@@ -1,13 +1,21 @@
-import { useState } from 'react';
-import Basket from '../../components/Basket/Basket';
+import React, { ReactElement, useState } from 'react';
 
-import Navbar from '../../components/Navbar/Navbar';
+// Containers
 import BeersContainer from '../BeersContainer/BeersContainer';
 
+// Components
+import Navbar from '../../components/Navbar/Navbar';
+import Basket from '../../components/Basket/Basket';
+
+// Interfaces
+import { BeerInterface } from '../../interfaces/BeerInterface';
+import { FormInterface } from '../../interfaces/FormInterface';
+
+// Styles
 import './LayoutContainer.scss';
 
 // Initial State for the formData
-const initialState = {
+const initialState: FormInterface = {
 	searchTerm: '',
 	highAbv: false,
 	classic: false,
@@ -15,10 +23,10 @@ const initialState = {
 };
 
 // Layout Container that house all layout components. Common state is housed at this level to reach the required components. If this project added more features then I would be looking at the Context API.
-const LayoutContainer = () => {
-	const [formData, setFormData] = useState(initialState);
-	const [basket, setBasket] = useState([]); // State for basket functionality
-	const [showBasket, setShowBasket] = useState(false); // State for showing the basket
+const LayoutContainer: React.FC = (): ReactElement => {
+	const [formData, setFormData] = useState<FormInterface>(initialState);
+	const [basket, setBasket] = useState<Array<BeerInterface>>([]); // State for basket functionality
+	const [showBasket, setShowBasket] = useState<boolean>(false); // State for showing the basket
 
 	return (
 		<section className='layout'>

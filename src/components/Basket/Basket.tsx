@@ -1,9 +1,28 @@
-import { FaRegTrashAlt } from 'react-icons/fa';
-import { ImCross } from 'react-icons/im';
+import React from 'react';
 
+// Interfaces
+import { BeerInterface } from '../../interfaces/BeerInterface';
+
+// React Icons
+import { ImCross } from 'react-icons/im';
+import { FaRegTrashAlt } from 'react-icons/fa';
+
+// Styles
 import './Basket.scss';
 
-const Basket = ({ basket, setBasket, showBasket, toggleBasket }) => {
+interface BasketProps {
+	basket: BeerInterface[];
+	setBasket: React.Dispatch<React.SetStateAction<Array<BeerInterface>>>;
+	showBasket: boolean;
+	toggleBasket: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Basket: React.FC<BasketProps> = ({
+	basket,
+	setBasket,
+	showBasket,
+	toggleBasket,
+}) => {
 	const removeItem = (item) => {
 		const newBasket = basket.filter((beer) => beer.id !== item.id);
 

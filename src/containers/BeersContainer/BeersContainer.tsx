@@ -35,8 +35,7 @@ const BeersContainer: React.FC<BeersContainerProps> = ({
 			return beer.name.toLowerCase().includes(formData.searchTerm);
 		});
 
-	// useEffect runs on load and when the formData is updated. Also, implemented a cache, so we can minimize API calls. It has been set up using a Map. Whenever the useEffect is run, the highAbv, classic, and acidic state are stringified, then we check if the Map already has this key. If it does we return the previously stored results. If it is a new query then we let it go to the API, and the response is added to the cache.
-
+	// handleRequest builds a queryString and checks if it is stored in the cache, if it is it updates the state. If it isn't it makes the API request and updates the state and saves the query and response to the cache.
 	const handleRequest = async (userCache) => {
 		const query = { ...formData };
 

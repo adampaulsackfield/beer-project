@@ -17,7 +17,7 @@ export const getBeers = async ({ highAbv, classic, acidic }) => {
 		if (acidic) {
 			return response.data.filter((beer) => beer.ph < 4);
 		}
-
+		console.log('Made REquest');
 		return response.data;
 	} catch (err) {
 		console.log(err);

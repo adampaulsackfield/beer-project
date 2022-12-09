@@ -1,6 +1,9 @@
+import React, { ReactElement } from 'react';
+
+// Styles
 import './Footer.scss';
 
-const Footer = () => {
+const Footer: React.FC = (): ReactElement => {
 	const date = new Date();
 
 	return (

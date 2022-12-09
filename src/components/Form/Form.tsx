@@ -1,17 +1,28 @@
-import { CiPercent } from 'react-icons/ci';
+import React, { ReactElement } from 'react';
 
+// Interfaces
+import { FormInterface } from '../../interfaces/FormInterface';
+
+// React Icons
+import { CiPercent } from 'react-icons/ci';
 import { GiTopHat, GiAcid } from 'react-icons/gi';
 
+// Styles
 import './Form.scss';
 
-const Form = ({ formData, setFormData }) => {
+interface FormProps {
+	formData: FormInterface;
+	setFormData: React.Dispatch<React.SetStateAction<FormInterface>>;
+}
+
+const Form: React.FC<FormProps> = ({ formData, setFormData }): ReactElement => {
 	// Single handler for multiple checkboxes, by using bracket notation to find object keys. Spread operator has been used to preserve the key/value pairs that are not being changed.
-	const handleChange = (e) => {
+	const handleChange = (e): void => {
 		setFormData({ ...formData, [e.target.name]: !formData[e.target.name] });
 	};
 
 	// Handles the user typing into the input.
-	const handleInput = (e) => {
+	const handleInput = (e): void => {
 		setFormData({ ...formData, searchTerm: e.target.value.toLowerCase() });
 	};
 
@@ -39,7 +50,6 @@ const Form = ({ formData, setFormData }) => {
 					type='checkbox'
 					name='highAbv'
 					id='highAbv'
-					value={formData.highAbv}
 					onChange={handleChange}
 				/>
 			</label>
@@ -54,7 +64,6 @@ const Form = ({ formData, setFormData }) => {
 					type='checkbox'
 					name='classic'
 					id='classic'
-					value={formData.classic}
 					onChange={handleChange}
 				/>
 			</label>
@@ -69,7 +78,6 @@ const Form = ({ formData, setFormData }) => {
 					type='checkbox'
 					name='acidic'
 					id='acidic'
-					value={formData.acidic}
 					onChange={handleChange}
 				/>
 			</label>

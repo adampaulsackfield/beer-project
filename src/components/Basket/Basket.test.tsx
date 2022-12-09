@@ -21,7 +21,7 @@ const Wrapper = ({ mockBasket = null }) => {
 	);
 };
 
-describe('Basket Tests', () => {
+describe('<Basket /> Tests', () => {
 	it('should render the <Basket /> component with no items', () => {
 		render(<Wrapper mockBasket={[]} />);
 

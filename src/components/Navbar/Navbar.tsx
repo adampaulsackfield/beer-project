@@ -64,7 +64,7 @@ const Navbar: React.FC<NavbarProps> = ({
 				</p>
 
 				<div className='sidebar__small--cart-icon' onClick={handleClick}>
-					<FaShoppingBasket />
+					<FaShoppingBasket data-testid='basket' />
 					{basket.length > 0 && (
 						<span className='sidebar__small--cart-count'>{basket.length}</span>
 					)}

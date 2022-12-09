@@ -37,13 +37,17 @@ const Basket: React.FC<BasketProps> = ({
 		<section className={`basket ${showBasket ? ' basket--show' : ''}`}>
 			<ul className='basket__items'>
 				<div className='basket__header'>
-					<p className='basket__header--text'>Basket</p>
-					<ImCross className='basket__header--cross' onClick={handleClick} />
+					<p className='basket__header--text'>Your Basket</p>
+					<ImCross
+						role='button'
+						className='basket__header--cross'
+						onClick={handleClick}
+					/>
 				</div>
 				{basket &&
 					basket.map((item) => {
 						return (
-							<li className='basket__item'>
+							<li key={item.id} className='basket__item'>
 								<img
 									className='basket__item--img'
 									src={item.image_url}
@@ -51,7 +55,11 @@ const Basket: React.FC<BasketProps> = ({
 								/>
 								<p className='basket__item--name'>{item.name}</p>
 								<p className='basket__item--price'>£9.99</p>
-								<FaRegTrashAlt color='red' onClick={() => removeItem(item)} />
+								<FaRegTrashAlt
+									data-testid='trash'
+									color='red'
+									onClick={() => removeItem(item)}
+								/>
 							</li>
 						);
 					})}

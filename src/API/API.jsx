@@ -14,12 +14,13 @@ export const getBeers = async ({ highAbv, classic, acidic }) => {
 	try {
 		const response = await axios.get(url, options);
 
-		if (acidic) {
-			return response.data.filter((beer) => beer.ph < 4);
-		}
-		console.log('Made REquest');
-		return response.data;
+		if (acidic) return filterAcidic(response.data);
+		else return response.data;
 	} catch (err) {
 		console.log(err);
 	}
+};
+
+const filterAcidic = (beers) => {
+	return beers.filter((beer) => beer.ph < 4);
 };

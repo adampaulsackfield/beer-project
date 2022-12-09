@@ -39,6 +39,7 @@ const Navbar = ({
 				<p
 					className='sidebar__small--logo'
 					style={{ writingMode: 'vertical-lr', textOrientation: 'upright' }}
+					// ! TODO Styled here as it didn't apply from SCSS
 				>
 					Tienda de Cerveza
 				</p>

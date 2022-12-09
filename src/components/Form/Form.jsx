@@ -5,12 +5,14 @@ import { GiTopHat, GiAcid } from 'react-icons/gi';
 import './Form.scss';
 
 const Form = ({ formData, setFormData }) => {
-	const handleInput = (e) => {
-		setFormData({ ...formData, searchTerm: e.target.value.toLowerCase() });
-	};
-
+	// Single handler for multiple checkboxes, by using bracket notation to find object keys. Spread operator has been used to preserve the key/value pairs that are not being changed.
 	const handleChange = (e) => {
 		setFormData({ ...formData, [e.target.name]: !formData[e.target.name] });
+	};
+
+	// Handles the user typing into the input.
+	const handleInput = (e) => {
+		setFormData({ ...formData, searchTerm: e.target.value.toLowerCase() });
 	};
 
 	return (

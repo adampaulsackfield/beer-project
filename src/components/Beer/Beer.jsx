@@ -1,6 +1,7 @@
 import './Beer.scss';
 
 const Beer = ({ beer, basket, setBasket }) => {
+	// Simple function to add items to the cart. Does not join duplicates.
 	const addToCart = () => {
 		setBasket([...basket, beer]);
 	};

@@ -6,6 +6,7 @@ import BeersContainer from '../BeersContainer/BeersContainer';
 
 import './LayoutContainer.scss';
 
+// Initial State for the formData
 const initialState = {
 	searchTerm: '',
 	highAbv: false,
@@ -13,10 +14,11 @@ const initialState = {
 	acidic: false,
 };
 
+// Layout Container that house all layout components. Common state is housed at this level to reach the required components. If this project added more features then I would be looking at the Context API.
 const LayoutContainer = () => {
 	const [formData, setFormData] = useState(initialState);
-	const [basket, setBasket] = useState([]);
-	const [showBasket, setShowBasket] = useState(false);
+	const [basket, setBasket] = useState([]); // State for basket functionality
+	const [showBasket, setShowBasket] = useState(false); // State for showing the basket
 
 	return (
 		<section className='layout'>

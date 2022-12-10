@@ -33,7 +33,7 @@ const Navbar: React.FC<NavbarProps> = ({
 	showBasket,
 	toggleBasket,
 }): ReactElement => {
-	const [isOpen, setIsOpen] = useState(false);
+	const [isOpen, setIsOpen] = useState<boolean>(false);
 
 	const handleClick = () => {
 		toggleBasket(!showBasket);

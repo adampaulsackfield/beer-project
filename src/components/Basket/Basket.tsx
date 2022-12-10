@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 // Interfaces
 import { BeerInterface } from '../../interfaces/BeerInterface';
@@ -22,7 +22,7 @@ const Basket: React.FC<BasketProps> = ({
 	setBasket,
 	showBasket,
 	toggleBasket,
-}) => {
+}): ReactElement => {
 	const removeItem = (item) => {
 		const newBasket = basket.filter((beer) => beer.id !== item.id);
 

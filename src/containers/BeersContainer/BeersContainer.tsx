@@ -25,8 +25,10 @@ const BeersContainer: React.FC<BeersContainerProps> = ({
 	basket,
 	setBasket,
 }): ReactElement => {
-	const [beers, setBeers] = useState([]);
-	const [cache, setCache] = useState(new Map());
+	const [beers, setBeers] = useState<Array<BeerInterface>>([]);
+	const [cache, setCache] = useState<Map<string, Array<BeerInterface>>>(
+		new Map()
+	);
 
 	// Filtered is used to filter the beers we have in state against the input for searchTerm. Which checks against beer names.
 	const filtered =

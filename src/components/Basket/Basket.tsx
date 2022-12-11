@@ -47,7 +47,7 @@ const Basket: React.FC<BasketProps> = ({
 				{basket &&
 					basket.map((item) => {
 						return (
-							<li key={item.id} className='basket__item'>
+							<li key={item.id} className='basket__item' data-testid='beer'>
 								<img
 									className='basket__item--img'
 									src={item.image_url}
@@ -56,7 +56,8 @@ const Basket: React.FC<BasketProps> = ({
 								<p className='basket__item--name'>{item.name}</p>
 								<p className='basket__item--price'>£9.99</p>
 								<FaRegTrashAlt
-									data-testid='trash'
+									data-testid={`trash-${item.id}`}
+									role='button'
 									color='red'
 									onClick={() => removeItem(item)}
 								/>

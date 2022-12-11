@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { BeerInterface } from '../../interfaces/BeerInterface';
 import { mockBeers } from '../../assets/testing/mockData';
 
 import Basket from './Basket';
+import userEvent from '@testing-library/user-event';
 
 const Wrapper = ({ mockBasket = null }) => {
 	const [basket, setBasket] = useState<Array<BeerInterface>>([]);
@@ -48,9 +49,21 @@ describe('<Basket /> Tests', () => {
 		expect(beers).toHaveLength(2);
 	});
 
-	it('should be able to remove an item from the basket', async () => {
+	xit('should be able to remove an item from the basket', async () => {
 		render(<Wrapper mockBasket={mockBeers} />);
 
 		// TODO Complete userEvent Tests
+
+		const beers = await screen.findAllByTestId('beer');
+		const trashIcon = await screen.findByTestId(`trash-${mockBeers[0].id}`);
+		expect(trashIcon).toBeInTheDocument();
+
+		expect(beers).toHaveLength(2);
+
+		fireEvent.click(trashIcon);
+
+		const updatedBeers = await screen.findAllByTestId(/beer/i);
+
+		expect(updatedBeers).toHaveLength(1);
 	});
 });

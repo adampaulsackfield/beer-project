@@ -14,11 +14,11 @@ import { FormInterface } from '../../interfaces/FormInterface';
 import { BeerInterface } from '../../interfaces/BeerInterface';
 
 // Props
-interface BeersContainerProps {
+type BeersContainerProps = {
 	formData: FormInterface;
 	basket: BeerInterface[];
 	setBasket: React.Dispatch<React.SetStateAction<Array<BeerInterface>>>;
-}
+};
 
 const BeersContainer: React.FC<BeersContainerProps> = ({
 	formData,

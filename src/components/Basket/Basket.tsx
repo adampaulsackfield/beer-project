@@ -10,12 +10,12 @@ import { FaRegTrashAlt } from 'react-icons/fa';
 // Styles
 import './Basket.scss';
 
-interface BasketProps {
+type BasketProps = {
 	basket: BeerInterface[];
 	setBasket: React.Dispatch<React.SetStateAction<Array<BeerInterface>>>;
 	showBasket: boolean;
 	toggleBasket: React.Dispatch<React.SetStateAction<boolean>>;
-}
+};
 
 const Basket: React.FC<BasketProps> = ({
 	basket,

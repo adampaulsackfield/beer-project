@@ -10,10 +10,10 @@ import { GiTopHat, GiAcid } from 'react-icons/gi';
 // Styles
 import './Form.scss';
 
-interface FormProps {
+type FormProps = {
 	formData: FormInterface;
 	setFormData: React.Dispatch<React.SetStateAction<FormInterface>>;
-}
+};
 
 const Form: React.FC<FormProps> = ({ formData, setFormData }): ReactElement => {
 	// Single handler for multiple checkboxes, by using bracket notation to find object keys. Spread operator has been used to preserve the key/value pairs that are not being changed.

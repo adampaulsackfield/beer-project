@@ -7,11 +7,11 @@ import { BeerInterface } from '../../interfaces/BeerInterface';
 import './Beer.scss';
 
 // Props
-interface BeerProps {
+type BeerProps = {
 	beer: BeerInterface;
 	basket: BeerInterface[];
 	setBasket: React.Dispatch<React.SetStateAction<Array<BeerInterface>>>;
-}
+};
 
 const Beer: React.FC<BeerProps> = ({
 	beer,

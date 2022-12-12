@@ -49,7 +49,7 @@ describe('<Basket /> Tests', () => {
 		expect(beers).toHaveLength(2);
 	});
 
-	xit('should be able to remove an item from the basket', async () => {
+	it('should be able to remove an item from the basket', async () => {
 		render(<Wrapper mockBasket={mockBeers} />);
 
 		// TODO Complete userEvent Tests
@@ -60,7 +60,7 @@ describe('<Basket /> Tests', () => {
 
 		expect(beers).toHaveLength(2);
 
-		fireEvent.click(trashIcon);
+		await userEvent.click(trashIcon);
 
 		const updatedBeers = await screen.findAllByTestId(/beer/i);
 

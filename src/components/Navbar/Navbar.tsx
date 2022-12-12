@@ -18,13 +18,13 @@ import { FormInterface } from '../../interfaces/FormInterface';
 import './Navbar.scss';
 
 // Props
-interface NavbarProps {
+type NavbarProps = {
 	formData: FormInterface;
 	setFormData: React.Dispatch<React.SetStateAction<FormInterface>>;
 	basket: BeerInterface[];
 	showBasket: boolean;
 	toggleBasket: React.Dispatch<React.SetStateAction<boolean>>;
-}
+};
 
 const Navbar: React.FC<NavbarProps> = ({
 	formData,

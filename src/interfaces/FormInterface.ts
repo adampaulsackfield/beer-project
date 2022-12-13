@@ -3,4 +3,5 @@ export interface FormInterface {
 	highAbv: boolean;
 	classic: boolean;
 	acidic: boolean;
+	page: number;
 }

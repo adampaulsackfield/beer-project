@@ -8,12 +8,29 @@
 
 	color: black;
 	padding: 0 1rem;
-}
 
-.beers__header {
-	font-size: 2rem;
-	color: $color-background;
-	padding: 1rem;
+	&__header {
+		font-size: 2rem;
+		color: $color-background;
+		padding: 1rem;
+	}
+
+	&__show-more {
+		background-color: transparent;
+		border: none;
+		padding: 0.5rem;
+		margin: 2rem auto;
+
+		background: $color-background;
+		border-radius: 20px;
+		color: white;
+		cursor: pointer;
+		transition: color ease-in 400ms;
+
+		&:hover {
+			color: $color-accent;
+		}
+	}
 }
 
 @media screen and (min-width: 800px) {

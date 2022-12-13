@@ -55,6 +55,7 @@ const Basket: React.FC<BasketProps> = ({
 								/>
 								<p className='basket__item--name'>{item.name}</p>
 								<p className='basket__item--price'>£9.99</p>
+
 								<FaRegTrashAlt
 									data-testid={`trash-${item.id}`}
 									role='button'

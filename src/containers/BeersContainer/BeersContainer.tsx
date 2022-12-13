@@ -16,12 +16,14 @@ import { BeerInterface } from '../../interfaces/BeerInterface';
 // Props
 type BeersContainerProps = {
 	formData: FormInterface;
+	setFormData: React.Dispatch<React.SetStateAction<FormInterface>>;
 	basket: BeerInterface[];
 	setBasket: React.Dispatch<React.SetStateAction<Array<BeerInterface>>>;
 };
 
 const BeersContainer: React.FC<BeersContainerProps> = ({
 	formData,
+	setFormData,
 	basket,
 	setBasket,
 }): ReactElement => {
@@ -61,7 +63,12 @@ const BeersContainer: React.FC<BeersContainerProps> = ({
 
 	useEffect(() => {
 		handleRequest(cache); // ! This works but I don't know why. There is no dependency array, as it complains if I add formData, but it still runs when I update formData.
-	});
+	}, [formData]);
+
+	const handleNextPage = () => {
+		if (formData.page === 5) return;
+		setFormData({ ...formData, page: ++formData.page });
+	};
 
 	return (
 		<div>
@@ -69,6 +76,21 @@ const BeersContainer: React.FC<BeersContainerProps> = ({
 
 			{/* Once we have the beers we can map over them and send to Beer components. */}
 			<section className='beers'>
+				{filtered ? (
+					filtered.map((beer) => {
+						return (
+							<Beer
+								key={beer.id}
+								beer={beer}
+								basket={basket}
+								setBasket={setBasket}
+							/>
+						);
+					})
+				) : (
+					<p>Nothing to see here</p>
+				)}
+
 				{filtered &&
 					filtered.map((beer) => {
 						return (
@@ -80,6 +102,11 @@ const BeersContainer: React.FC<BeersContainerProps> = ({
 							/>
 						);
 					})}
+				{formData.page < 5 && (
+					<button className='beers__show-more' onClick={handleNextPage}>
+						Load next page
+					</button>
+				)}
 			</section>
 		</div>
 	);

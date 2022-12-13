@@ -3,5 +3,6 @@ export interface ParamsInterface {
 		per_page: number;
 		abv_gt?: number;
 		brewed_before?: string;
+		page?: number;
 	};
 }

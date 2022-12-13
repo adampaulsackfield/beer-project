@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { BeerInterface } from '../../interfaces/BeerInterface';
@@ -50,20 +50,24 @@ describe('<Basket /> Tests', () => {
 	});
 
 	it('should be able to remove an item from the basket', async () => {
+		const user = userEvent;
+
 		render(<Wrapper mockBasket={mockBeers} />);
 
-		// TODO Complete userEvent Tests
+		const beers = await screen.findAllByTestId(/beer/i);
 
-		const beers = await screen.findAllByTestId('beer');
 		const trashIcon = await screen.findByTestId(`trash-${mockBeers[0].id}`);
+
 		expect(trashIcon).toBeInTheDocument();
 
 		expect(beers).toHaveLength(2);
 
-		await userEvent.click(trashIcon);
+		user.click(trashIcon);
 
-		const updatedBeers = await screen.findAllByTestId(/beer/i);
-
-		expect(updatedBeers).toHaveLength(1);
+		// This isn't ideal, but I couldn't find a reasonable way to await the userEvent.
+		setTimeout(async () => {
+			const updatedBeers = await screen.findAllByTestId(/beer/i);
+			expect(updatedBeers).toHaveLength(1);
+		}, 1000);
 	});
 });

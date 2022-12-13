@@ -9,15 +9,18 @@ export const getBeers = async ({
 	highAbv,
 	classic,
 	acidic,
+	page,
 }: {
 	highAbv: boolean;
 	classic: boolean;
 	acidic: boolean;
+	page: number;
 }): Promise<BeerInterface[]> => {
 	const url = 'https://api.punkapi.com/v2/beers';
 	const options: ParamsInterface = {
 		params: {
 			per_page: 80,
+			page: page,
 		},
 	};
 

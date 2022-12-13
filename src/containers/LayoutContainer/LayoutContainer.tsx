@@ -20,6 +20,7 @@ const initialState: FormInterface = {
 	highAbv: false,
 	classic: false,
 	acidic: false,
+	page: 1,
 };
 
 // Layout Container that house all layout components. Common state is housed at this level to reach the required components. If this project added more features then I would be looking at the Context API.
@@ -40,6 +41,7 @@ const LayoutContainer: React.FC = (): ReactElement => {
 
 			<BeersContainer
 				formData={formData}
+				setFormData={setFormData}
 				basket={basket}
 				setBasket={setBasket}
 			/>

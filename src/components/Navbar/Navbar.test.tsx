@@ -16,6 +16,7 @@ const mockFormData: FormInterface = {
 	highAbv: false,
 	classic: false,
 	acidic: false,
+	page: 1,
 };
 
 const Wrapper = ({ mockBasket = null, mockFormData = null }) => {

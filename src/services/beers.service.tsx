@@ -20,7 +20,7 @@ export const getBeers = async ({
 	const options: ParamsInterface = {
 		params: {
 			per_page: 80,
-			page: page,
+			page,
 		},
 	};
 

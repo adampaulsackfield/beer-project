@@ -6,11 +6,13 @@ import { ParamsInterface } from '../interfaces/ParamsInterface';
 
 // Axios Request, takes any user queries and builds a queryString. For acidic, the API offered no option so this is done with a helper function to filter the results.
 export const getBeers = async ({
+	searchTerm,
 	highAbv,
 	classic,
 	acidic,
 	page,
 }: {
+	searchTerm: string;
 	highAbv: boolean;
 	classic: boolean;
 	acidic: boolean;
@@ -24,6 +26,7 @@ export const getBeers = async ({
 		},
 	};
 
+	if (searchTerm) options.params = { ...options.params, beer_name: searchTerm };
 	if (highAbv) options.params = { ...options.params, abv_gt: 6 };
 	if (classic) options.params = { ...options.params, brewed_before: '01-2010' };
 

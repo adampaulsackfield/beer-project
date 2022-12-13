@@ -32,13 +32,6 @@ const BeersContainer: React.FC<BeersContainerProps> = ({
 		new Map()
 	);
 
-	// Filtered is used to filter the beers we have in state against the input for searchTerm. Which checks against beer names.
-	const filtered =
-		beers &&
-		beers.filter((beer) => {
-			return beer.name.toLowerCase().includes(formData.searchTerm);
-		});
-
 	// handleRequest builds a queryString and checks if it is stored in the cache, if it is it updates the state. If it isn't it makes the API request and updates the state and saves the query and response to the cache.
 	const handleRequest = async (userCache) => {
 		const query = { ...formData };
@@ -76,23 +69,8 @@ const BeersContainer: React.FC<BeersContainerProps> = ({
 
 			{/* Once we have the beers we can map over them and send to Beer components. */}
 			<section className='beers'>
-				{filtered ? (
-					filtered.map((beer) => {
-						return (
-							<Beer
-								key={beer.id}
-								beer={beer}
-								basket={basket}
-								setBasket={setBasket}
-							/>
-						);
-					})
-				) : (
-					<p>Nothing to see here</p>
-				)}
-
-				{filtered &&
-					filtered.map((beer) => {
+				{beers &&
+					beers.map((beer) => {
 						return (
 							<Beer
 								key={beer.id}

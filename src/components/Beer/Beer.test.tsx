@@ -6,7 +6,6 @@ import { BeerInterface } from '../../interfaces/BeerInterface';
 import { mockBeers } from '../../assets/testing/mockData';
 
 import Beer from './Beer';
-import userEvent from '@testing-library/user-event';
 
 const Wrapper = ({ mockBasket = null }) => {
 	const [basket, setBasket] = useState<Array<BeerInterface>>([]);
@@ -26,7 +25,6 @@ describe('<Beer />', () => {
 
 		const beers = screen.getAllByText(/ABV/i);
 
-		// expect(beers).toBeInTheDocument();
 		expect(beers).toHaveLength(1);
 	});
 });

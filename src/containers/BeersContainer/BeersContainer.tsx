@@ -56,7 +56,7 @@ const BeersContainer: React.FC<BeersContainerProps> = ({
 
 	useEffect(() => {
 		handleRequest(cache); // ! This works but I don't know why. There is no dependency array, as it complains if I add formData, but it still runs when I update formData. Leaving formData in with intellisense complaining.
-	}, [formData]);
+	});
 
 	const handleNextPage = () => {
 		if (formData.page === 5) return;
